@@ -12,13 +12,15 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Discord;
 
-namespace DiscordFirstBot
+namespace SysLaBot
 {
     public class Program
     {
         public static DiscordSocketClient client;
         public static CommandService commands;
         public static IServiceProvider services;
+
+        public static RemainderReader remainder;
 
         static void Main(string[] args)
             => new Program().MainAsync().GetAwaiter().GetResult();
@@ -44,13 +46,15 @@ namespace DiscordFirstBot
 
             // タイマーの間隔(ミリ秒)
             // 1000ms
-            System.Timers.Timer timer = new System.Timers.Timer(10000);
+            System.Timers.Timer timer = new System.Timers.Timer(1000);
             // タイマーの処理
             timer.Elapsed += Remainder;
 
             await commands.AddModulesAsync(Assembly.GetEntryAssembly(), services);
             await client.LoginAsync(TokenType.Bot, token);
             await client.StartAsync();
+
+            remainder = new RemainderReader("remainder.tsv");
 
             // タイマーを開始する
             timer.Start();
@@ -107,21 +111,17 @@ namespace DiscordFirstBot
             await Announce();
         }
 
+
         public async Task Announce()
         {
-            var embed = new EmbedBuilder()
-            {
-                // Embed property can be set within object initializer
-                Color = Color.Blue,
-                Title = "シス研の時間です",
-                Description = "今日は木曜日です。\nプログラミングを楽しみましょう。",
-                ThumbnailUrl = @"https://2.bp.blogspot.com/-JPa0Nzk_E8M/Vf-aIH2jsyI/AAAAAAAAyDc/2FG8dSNSk-k/s400/computer_girl.png"
-            }.Build();
+            // #general
             //ulong id = 437074691098673164;
-            // spam;
+            // #bot-develop
             ulong id = 509687250582372352;
             var channel = client.GetChannel(id) as IMessageChannel;
-            await channel.SendMessageAsync(embed: embed);
+            var embed = remainder.ApplicableEmbed();
+            if (embed != null)
+                await channel.SendMessageAsync(embed: embed);
         }
     }
 }
