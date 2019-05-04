@@ -9,7 +9,7 @@ namespace SysLaBot
     /// <summary>
     /// 繰り返しを定義します
     /// </summary>
-    enum Repetition
+    public enum Repetition
     {
         /// <summary>
         /// 毎年、同じ月日に繰り返します
