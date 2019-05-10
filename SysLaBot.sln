@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLaBot", "SysLaBot\SysLaBot.csproj", "{C1AF1EE9-6EBB-4B4B-8FA7-E09EF3E2994E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLaBotApp", "SysLaBotApp\SysLaBotApp.csproj", "{3413D55E-CB44-4CF2-9123-F37D693F2E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLaBot", "SysLaBot\SysLaBot.csproj", "{1A683B53-384B-4009-B2E3-08D64A3045C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1AF1EE9-6EBB-4B4B-8FA7-E09EF3E2994E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1AF1EE9-6EBB-4B4B-8FA7-E09EF3E2994E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1AF1EE9-6EBB-4B4B-8FA7-E09EF3E2994E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1AF1EE9-6EBB-4B4B-8FA7-E09EF3E2994E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3413D55E-CB44-4CF2-9123-F37D693F2E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3413D55E-CB44-4CF2-9123-F37D693F2E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3413D55E-CB44-4CF2-9123-F37D693F2E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3413D55E-CB44-4CF2-9123-F37D693F2E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A683B53-384B-4009-B2E3-08D64A3045C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A683B53-384B-4009-B2E3-08D64A3045C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A683B53-384B-4009-B2E3-08D64A3045C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A683B53-384B-4009-B2E3-08D64A3045C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
