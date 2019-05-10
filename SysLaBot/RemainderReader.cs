@@ -30,6 +30,10 @@ namespace SysLaBot
             var lines = data.Replace("\r\n", "\n").Split('\n');
             foreach (var line in lines)
             {
+                if (line == string.Empty)
+                {
+                    continue;
+                }
                 var item = line.Split('\t');
                 var remainder = new Remainder();
                 remainder.DateTimeOffset = DateTimeOffset.Parse(item[0]);

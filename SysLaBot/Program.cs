@@ -41,7 +41,7 @@ namespace SysLaBot
             // トークンを読み込みます。
             using (StreamReader sr = new StreamReader("token.dat"))
             {
-                token = sr.ReadToEnd();
+                token = sr.ReadToEnd().Trim();
             }
 
             // タイマーの間隔(ミリ秒)
@@ -82,8 +82,8 @@ namespace SysLaBot
 
             int argPos = 0;
 
-            // コマンドかどうか判定（今回は、「!」で判定）
-            if (!(message.HasCharPrefix('!', ref argPos) || message.HasMentionPrefix(client.CurrentUser, ref argPos))) { return; }
+            // コマンドかどうか判定（今回は、「/」で判定）
+            if (!(message.HasCharPrefix('/', ref argPos) || message.HasMentionPrefix(client.CurrentUser, ref argPos))) { return; }
 
             var context = new CommandContext(client, message);
 
